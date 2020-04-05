@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="./libgif.js"></script>
+		<script type="text/javascript" src="./rubbable.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<title>
+			Example gif
+		</title>
+	</head>
+
+	<body>
+		<center>
+			<img id="example1" src="" rel:animated_src="./example_gifs/GIF3-1.gif" rel:auto_play="0"/>
+			<!-- <div id = 'test'>
+				<img id="example1" src="./example_gifs/rub_test_preview.jpg" rel:animated_src="" rel:auto_play="0" />
+			</div> -->
+			<br>
+			<script type="text/javascript">
+				// var num = 0
+				// var sup1
+				function pauseOrPlay() {
+					sup1.pause()
+					console.log('pause:', sup1.get_playing())
+					// if (!sup1.playing){
+					// 	console.log('pause in')
+					// 	var obj = document.getElementsByClassName('jsgif');
+					// 	// var objParent = document.getElementById('center')
+					// 	var objParent = obj[0].parentNode
+					// 	console.log(obj)
+					// 	console.log(objParent)
+					// 	objParent.removeChild(obj)
+					// 	var img = document.createElement('img')
+					// 	img.id = 'example1'
+					// 	img.src = './example_gifs/rub_test_preview.jpg'
+						
+					// }
+				}
+				function toLoad() {
+					var num = 0
+					console.log(document.getElementById('example1'))
+					var sup1 = new SuperGif({
+						gif: document.getElementById('example1'),
+						on_end: function (gif) {
+							console.log('on_end')
+							num = num + 1
+							if (num == 3) {
+								sup1.pause()
+								console.log('pause:', sup1.get_playing())
+							}
+
+						}
+					});
+					sup1.load_url("./example_gifs/GIF3-1.gif", function () { 
+						console.log('finish loading') 
+						sup1.play()
+					});
+				}
+				// function initBefore() {
+				// 	var root = document.getElementById('test')
+				// 	var child = document.createElement('img')
+				// 	child.id = 'example1'
+				// 	child.src = './example_gifs/rub_test_preview.jpg'
+				// 	root.appendChild(child)
+				// }
+			</script> 
+			<a href="javascript:;" onmousedown="initBefore()">Test</a> |
+			<a href="javascript:;" onmousedown="toLoad()">Load</a> 
+
+			<br><br>
+		</center>
+
+	</body>
+
+</html>
