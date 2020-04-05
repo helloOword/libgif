@@ -13,7 +13,7 @@
 
 	<body>
 		<center>
-			<img id="example1" src="" rel:animated_src="./example_gifs/GIF3-1.gif" rel:auto_play="0"/>
+			<img id="example1" src="" rel:animated_src="https://data-gifs.github.io/Data-GIFs/corpus/acrossUSA.gif" rel:auto_play="0"/>
 			<!-- <div id = 'test'>
 				<img id="example1" src="./example_gifs/rub_test_preview.jpg" rel:animated_src="" rel:auto_play="0" />
 			</div> -->
@@ -40,21 +40,27 @@
 				}
 				function toLoad() {
 					var num = 0
+					var date1, date2, date3
 					console.log(document.getElementById('example1'))
 					var sup1 = new SuperGif({
 						gif: document.getElementById('example1'),
 						on_end: function (gif) {
 							console.log('on_end')
 							num = num + 1
-							if (num == 3) {
+							if (num == 1) {
 								sup1.pause()
-								console.log('pause:', sup1.get_playing())
+								date3 = new Date()
+								console.log(date3.getTime() - date2.getTime())
+								// console.log('pause:', sup1.get_playing())
 							}
 
 						}
 					});
+					date1 = new Date()
 					sup1.load_url("./example_gifs/GIF3-1.gif", function () { 
 						console.log('finish loading') 
+						date2 = new Date()
+						console.log(date2.getTime() - date1.getTime())
 						sup1.play()
 					});
 				}

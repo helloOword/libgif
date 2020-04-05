@@ -605,7 +605,7 @@
             if (!frame) return;
             frames.push({
                             data: frame.getImageData(0, 0, hdr.width, hdr.height),
-                            delay: delay
+                            delay: 2 * delay
                         });
             frameOffsets.push({ x: 0, y: 0 });
         };
